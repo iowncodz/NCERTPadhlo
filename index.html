@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCERTPadhlo – Free NCERT Solutions Class 6 to 12 | CBSE 2026-27</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="NCERTPadhlo – Free NCERT Solutions for Class 6, 7, 8, 9, 10, 11, 12. Chapter-wise PDF, exercise solutions for Maths, Science, Social Science, English, Hindi. Updated for CBSE session 2026-27.">
+<meta name="keywords" content="NCERT Solutions, CBSE Solutions, Class 10 Maths NCERT Solutions, Class 9 Science NCERT, Free NCERT PDF, NCERT Solutions Class 6, NCERT Solutions Class 7, NCERT Solutions Class 8, NCERT Solutions Class 9, NCERT Solutions Class 10, NCERT Solutions Class 11, NCERT Solutions Class 12, NCERT Solutions Hindi Medium, NCERT Solutions English Medium, CBSE 2026-27 Solutions, Board Exam Solutions, Chapter wise NCERT, Exercise Solutions NCERT, Free Study Material CBSE">
+<meta name="author" content="NCERTPadhlo">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="NCERTPadhlo – Free NCERT Solutions Class 6 to 12">
+<meta property="og:description" content="Chapter-wise free NCERT Solutions for all classes. Updated for CBSE 2026-27 session.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0673F6">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  :root{
+    --bg:#f5f4f0;--bg2:#fff;--bg3:#faf9ff;
+    --border:#e2e0da;--border-h:#b8b0e8;
+    --text:#1a1a1a;--muted:#888;--dim:#bbb;
+    --accent:#0673F6;--teal:#1d7a54;--accent-light:#eef4ff;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;min-height:100vh;padding-bottom:3rem;overflow-x:hidden}
+
+  /* ── NAV ── */
+  .main-nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;border-bottom:.5px solid var(--border);background:var(--bg2);position:sticky;top:0;z-index:100}
+  .logo{display:flex;align-items:center;gap:9px;font-family:'Fuzzy Bubbles',cursive;font-weight:700;font-size:16px;color:#1a1a1a;text-decoration:none}
+  .nav-tag{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+
+  /* Desktop Nav Links */
+  .desktop-nav{display:flex;gap:.4rem;align-items:center;list-style:none}
+  .desktop-nav li{position:relative}
+  .desktop-nav a{display:block;font-size:11.5px;color:var(--text);text-decoration:none;font-family:'Poppins',sans-serif;font-weight:500;transition:color .15s,background .15s;padding:6px 12px;border-radius:6px;white-space:nowrap}
+  .desktop-nav a:hover{color:var(--accent);background:var(--accent-light)}
+
+  /* Dropdown */
+  .dropdown-menu{position:absolute;top:100%;left:0;min-width:180px;background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:.4rem;box-shadow:0 8px 30px rgba(0,0,0,.08);opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;z-index:200;list-style:none;margin-top:4px}
+  .dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+  .dropdown-menu li{margin:2px 0}
+  .dropdown-menu a{display:block;padding:7px 12px;font-size:11.5px;border-radius:6px;color:var(--muted)}
+  .dropdown-menu a:hover{background:var(--accent-light);color:var(--accent)}
+  .dropdown-arrow{font-size:9px;margin-left:2px;opacity:.5}
+
+  /* Mobile Menu Toggle */
+  .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+  .mobile-toggle span{display:block;width:20px;height:2px;background:var(--text);margin:4px 0;border-radius:2px;transition:.3s}
+
+  /* Mobile Nav */
+  .mobile-nav{display:none;position:fixed;top:0;right:-280px;width:280px;height:100vh;background:var(--bg2);z-index:300;border-left:.5px solid var(--border);padding:5rem 1.5rem 1.5rem;transition:right .3s ease;overflow-y:auto}
+  .mobile-nav.open{right:0}
+  .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:250}
+  .mobile-overlay.open{display:block}
+  .mobile-nav a{display:block;padding:10px 0;font-size:13px;color:var(--text);text-decoration:none;font-family:'Poppins',sans-serif;font-weight:500;border-bottom:.5px solid var(--border);transition:color .15s}
+  .mobile-nav a:hover{color:var(--accent)}
+  .mobile-nav .dropdown-items{padding-left:1rem;border-bottom:.5px solid var(--border);padding-bottom:.5rem}
+  .mobile-nav .dropdown-items a{font-size:12px;color:var(--muted);border:none;padding:7px 0}
+  .mobile-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px}
+  .mobile-close:hover{background:var(--bg)}
+
+  /* ── HERO CENTERED ── */
+  .hero{padding:3.5rem 1.5rem 3rem;background:var(--bg2);border-bottom:.5px solid var(--border);position:relative;overflow:hidden;text-align:center}
+  .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(6,115,246,.07) 0%,transparent 70%);pointer-events:none}
+  .hero::after{content:'';position:absolute;bottom:-60px;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(6,115,246,.05) 0%,transparent 70%);pointer-events:none}
+  .hero-inner{max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  .hero-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;background:var(--accent-light);border:.5px solid #c4d9fd;border-radius:20px;padding:4px 12px;margin-bottom:1.1rem;width:fit-content}
+  .hero-badge span{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+  .hero h1{font-size:clamp(28px,6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:.6rem;font-family:'Poppins',sans-serif;text-align:center}
+  .hero h1 .accent{color:var(--accent)}
+  .hero-sub{font-size:13.5px;color:var(--muted);margin-bottom:1.6rem;line-height:1.7;max-width:540px;text-align:center}
+  .hero-cta{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center;justify-content:center}
+  .btn-primary{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:.65rem 1.3rem;border-radius:8px;text-decoration:none;transition:opacity .15s;border:none;cursor:pointer}
+  .btn-primary:hover{opacity:.88}
+  .btn-ghost{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--text);font-family:'Syne',sans-serif;font-weight:600;font-size:13px;padding:.65rem 1.1rem;border-radius:8px;border:.5px solid var(--border);text-decoration:none;transition:border-color .15s}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ── SELECTOR ROW (Class → Subject → Chapter) ── */
+  .selector-row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:1rem}
+  .selector-wrap{position:relative;min-width:170px}
+  .selector-wrap select{width:100%;appearance:none;-webkit-appearance:none;background:var(--bg2);border:.5px solid var(--border);border-radius:8px;padding:.65rem 2.2rem .65rem .85rem;font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:500;color:var(--text);cursor:pointer;transition:border-color .15s,box-shadow .15s;outline:none}
+  .selector-wrap select:hover{border-color:var(--accent)}
+  .selector-wrap select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(6,115,246,.1)}
+  .selector-wrap select:disabled{color:var(--dim);cursor:not-allowed;background:var(--bg)}
+  .selector-arrow{position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--dim);font-size:10px}
+  .selector-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;padding:.65rem 1.3rem;border-radius:8px;border:none;cursor:pointer;transition:opacity .15s;margin-left:.2rem}
+  .selector-btn:hover{opacity:.88}
+  .selector-btn:disabled{opacity:.5;cursor:not-allowed}
+
+  /* ── STATS STRIP ── */
+  .stats-strip{display:flex;gap:0;border-bottom:.5px solid var(--border);background:var(--bg2);overflow-x:auto}
+  .stat-item{flex:1;min-width:110px;padding:1rem 1.25rem;border-right:.5px solid var(--border);text-align:center}
+  .stat-item:last-child{border-right:none}
+  .stat-num{font-family:'Space Mono',monospace;font-size:18px;font-weight:700;color:var(--accent);display:block;letter-spacing:-.02em}
+  .stat-label{font-size:11px;color:var(--dim);margin-top:2px;font-family:'Syne',sans-serif}
+
+  /* ── SECTION HEADER ── */
+  .sec-hd{padding:1.5rem 1.5rem .9rem;display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+  .sec-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase}
+  .sec-subtitle{font-size:11px;color:var(--muted);font-family:'Syne',sans-serif}
+
+  /* ── CLASS GRID ── */
+  .class-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:8px;padding:0 1.5rem 1.5rem;background:var(--bg)}
+
+  .class-card{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;padding:1.2rem 1.1rem;text-decoration:none;color:var(--text);transition:border-color .18s,background .18s,transform .18s;display:flex;flex-direction:column;gap:.5rem;cursor:pointer;position:relative;overflow:hidden}
+  .class-card::after{content:'';position:absolute;inset:0;background:var(--accent);opacity:0;transition:opacity .18s;border-radius:inherit}
+  .class-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .class-card:hover .class-name,.class-card:hover .class-num,.class-card:hover .class-subjects{color:inherit}
+
+  .class-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
+  .class-name{font-size:20px;font-weight:800;color:var(--text);font-family:'Poppins',sans-serif;line-height:1}
+  .class-subjects{display:flex;gap:5px;flex-wrap:wrap;margin-top:.2rem}
+  .subj-tag{font-family:'Space Mono',monospace;font-size:9px;padding:2px 7px;border-radius:3px;font-weight:700}
+  .tag-maths{background:#e8f5ee;color:#1d7a54}
+  .tag-sci{background:#fff3e0;color:#e65100}
+  .tag-soc{background:#fce4ec;color:#c62828}
+  .tag-eng{background:#e8eaf6;color:#3949ab}
+  .tag-more{background:var(--bg);color:var(--dim);border:.5px solid var(--border)}
+  .class-arrow{align-self:flex-end;color:var(--dim);margin-top:.3rem}
+
+  /* Board classes highlight */
+  .class-card.board{border-color:#e6d0ff;background:linear-gradient(135deg,#fdfcff 0%,#f7f0ff 100%)}
+  .class-card.board .class-name{color:#5a3fcf}
+  .class-card.board .class-num{color:#9b8ecf}
+  .board-badge{font-family:'Space Mono',monospace;font-size:8px;background:#ede8ff;color:#5a3fcf;padding:2px 7px;border-radius:3px;letter-spacing:.08em;font-weight:700;width:fit-content}
+
+  /* ── WHY US SECTION ── */
+  .why-section{padding:2rem 1.5rem;background:var(--bg2);border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);margin:1.5rem 0 0}
+  .why-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(18px,4vw,26px);margin-bottom:.4rem;letter-spacing:-.02em}
+  .why-title span{color:var(--accent)}
+  .why-sub{font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.6}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:10px}
+  .why-card{background:var(--bg);border:.5px solid var(--border);border-radius:10px;padding:1rem 1.1rem}
+  .why-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.6rem;font-size:16px}
+  .why-card h3{font-size:13px;font-weight:700;margin-bottom:.3rem}
+  .why-card p{font-size:12px;color:var(--muted);line-height:1.6}
+
+  /* ── POPULAR SOLUTIONS ── */
+  .popular-section{padding:0 1.5rem 1.5rem;background:var(--bg)}
+  .pop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:7px}
+  .pop-card{background:var(--bg2);border:.5px solid var(--border);border-radius:9px;padding:.85rem 1rem;display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--text);transition:border-color .15s}
+  .pop-card:hover{border-color:var(--accent)}
+  .pop-info{}
+  .pop-name{font-size:13px;font-weight:700}
+  .pop-meta{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:2px}
+  .pop-arrow{color:var(--dim)}
+
+  /* ── SEO TEXT SECTION ── */
+  .seo-section{padding:2rem 1.5rem;background:var(--bg2);border-top:.5px solid var(--border);margin-top:1.5rem}
+  .seo-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(16px,3.5vw,22px);margin-bottom:1rem;letter-spacing:-.02em}
+  .seo-title span{color:var(--accent)}
+  .seo-body{font-size:13px;color:var(--muted);line-height:1.85;max-width:760px}
+  .seo-body p{margin-bottom:.8rem}
+  .seo-body strong{color:var(--text)}
+  .seo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:8px;margin-top:1.2rem}
+  .seo-topic{background:var(--bg);border:.5px solid var(--border);border-radius:8px;padding:.7rem .9rem}
+  .seo-topic-title{font-size:12px;font-weight:700;margin-bottom:.3rem}
+  .seo-topic-list{font-size:11px;color:var(--muted);line-height:1.8;font-family:'Syne',sans-serif}
+
+  /* ── KEYWORD CLOUD ── */
+  .keyword-section{padding:1.5rem 1.5rem 2rem;background:var(--bg);border-top:.5px solid var(--border)}
+  .kw-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.9rem}
+  .kw-cloud{display:flex;flex-wrap:wrap;gap:6px}
+  .kw-tag{font-family:'Space Mono',monospace;font-size:10px;padding:4px 10px;border-radius:4px;background:var(--bg2);border:.5px solid var(--border);color:var(--muted);transition:border-color .15s,color .15s;cursor:default}
+  .kw-tag:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ── FOOTER ── */
+  .footer{padding:1.5rem 1.5rem 1rem;border-top:.5px solid var(--border);background:var(--bg2)}
+  .footer-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem}
+  .footer-brand{font-family:'Fuzzy Bubbles',cursive;font-weight:700;font-size:15px;color:#1a1a1a;margin-bottom:.4rem}
+  .footer-desc{font-size:11px;color:var(--dim);line-height:1.6;max-width:220px;font-family:'Syne',sans-serif}
+  .footer-links-col h4{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
+  .footer-links-col a{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-bottom:.3rem;font-family:'Syne',sans-serif;transition:color .15s}
+  .footer-links-col a:hover{color:var(--accent)}
+  .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-top:1rem;border-top:.5px solid var(--border)}
+  .footer-copy{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim)}
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  .class-card{animation:fadeUp .4s ease both}
+  .class-card:nth-child(1){animation-delay:.05s}
+  .class-card:nth-child(2){animation-delay:.1s}
+  .class-card:nth-child(3){animation-delay:.15s}
+  .class-card:nth-child(4){animation-delay:.2s}
+  .class-card:nth-child(5){animation-delay:.25s}
+  .class-card:nth-child(6){animation-delay:.3s}
+  .class-card:nth-child(7){animation-delay:.35s}
+
+  /* ── MOBILE ── */
+  @media(max-width:900px){
+    .desktop-nav{display:none}
+    .mobile-toggle{display:block}
+  }
+  @media(max-width:600px){
+    .hero{padding:2.5rem 1rem 2.2rem}
+    .class-grid,.popular-section,.sec-hd,.why-section,.seo-section,.keyword-section,.footer{padding-left:1rem;padding-right:1rem}
+    .stats-strip{overflow-x:auto}
+    .footer-top{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<!-- OVERLAY FOR MOBILE -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+
+<!-- NAVBAR -->
+<nav class="main-nav">
+  <a class="logo" href="index.html">
+    <img src="logo.jpg" style="height:30px;width:auto;border-radius:4px;" alt="NCERTPadhlo Logo">
+    NCERT Padhlo
+  </a>
+
+  <!-- Desktop Menu (Tiwari Academy Style) -->
+  <ul class="desktop-nav">
+    <li><a href="#classes">NCERT Solutions</a></li>
+    <li><a href="#">MCQ</a></li>
+    <li><a href="#">Sample Papers</a></li>
+    <li><a href="#">NCERT Books</a></li>
+    <li><a href="#">Syllabus</a></li>
+    <li class="dropdown">
+      <a href="#">More <span class="dropdown-arrow">▼</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Grammar</a></li>
+        <li><a href="#">Hindi Medium</a></li>
+        <li><a href="#">Latest Blogs</a></li>
+        <li><a href="#">Ask Questions</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:1rem">
+    <div class="nav-tag">CBSE 2026–27</div>
+    <button class="mobile-toggle" onclick="openMenu()" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="#classes" onclick="closeMenu()">NCERT Solutions</a>
+  <a href="#" onclick="closeMenu()">MCQ</a>
+  <a href="#" onclick="closeMenu()">Sample Papers</a>
+  <a href="#" onclick="closeMenu()">NCERT Books</a>
+  <a href="#" onclick="closeMenu()">Syllabus</a>
+  <a href="#" onclick="closeMenu()">Grammar</a>
+  <a href="#" onclick="closeMenu()">Hindi Medium</a>
+  <a href="#" onclick="closeMenu()">Latest Blogs</a>
+  <a href="#" onclick="closeMenu()">Ask Questions</a>
+  <a href="#" onclick="closeMenu()">Contact Us</a>
+</div>
+
+<!-- HERO (CENTERED) -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span></span>
+      Updated for Session 2026–27
+    </div>
+    <h1>Free <span class="accent">NCERT Solutions</span><br>Class 6 to 12</h1>
+    <p class="hero-sub">
+      Chapter-wise NCERT Solutions for all subjects — Maths, Science, Social Science, English, Hindi & more. Step-by-step answers, PDF downloads, Hindi & English medium. Bilkul free, koi login nahi.
+    </p>
+    <!-- Class / Subject / Chapter Selector -->
+    <div class="selector-row">
+      <div class="selector-wrap">
+        <select id="selectClass" onchange="onClassChange()">
+          <option value="" disabled selected>Select Your Class</option>
+          <option value="6">Class 6</option>
+          <option value="7">Class 7</option>
+          <option value="8">Class 8</option>
+          <option value="9">Class 9</option>
+          <option value="10">Class 10</option>
+          <option value="11">Class 11</option>
+          <option value="12">Class 12</option>
+        </select>
+        <span class="selector-arrow">▼</span>
+      </div>
+
+      <div class="selector-wrap">
+        <select id="selectSubject" onchange="onSubjectChange()" disabled>
+          <option value="" disabled selected>Select Subject</option>
+        </select>
+        <span class="selector-arrow">▼</span>
+      </div>
+
+      <div class="selector-wrap">
+        <select id="selectChapter" disabled>
+          <option value="" disabled selected>Select Chapter</option>
+        </select>
+        <span class="selector-arrow">▼</span>
+      </div>
+
+      <button class="selector-btn" id="goBtn" onclick="goToSolution()" disabled>
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Go
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <span class="stat-num">7</span>
+    <div class="stat-label">Classes (6–12)</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">40+</span>
+    <div class="stat-label">Subjects</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">500+</span>
+    <div class="stat-label">Chapters</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3000+</span>
+    <div class="stat-label">Exercises</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">Free</span>
+    <div class="stat-label">Always & Forever</div>
+  </div>
+</div>
+
+<!-- CLASS SELECT -->
+<div id="classes">
+  <div class="sec-hd">
+    <div>
+      <div class="sec-label">Select Your Class ✦</div>
+      <div class="sec-subtitle" style="margin-top:3px">Class 6 se 12 tak — apna class choose karo</div>
+    </div>
+  </div>
+
+  <div class="class-grid">
+
+    <!-- Class 6 -->
+    <a class="class-card" href="class_6th_page.html">
+      <div class="class-num">Class</div>
+      <div class="class-name">6th</div>
+      <div class="class-subjects">
+        <span class="subj-tag tag-maths">Maths</span>
+        <span class="subj-tag tag-sci">Science</span>
+        <span class="subj-tag tag-soc">SST</span>
+        <span class="subj-tag tag-more">+3</span>
+      </div>
+      <svg class="class-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Class 7 -->
+    <a class="class-card" href="class_7th_page.html">
+      <div class="class-num">Class</div>
+      <div class="class-name">7th</div>
+      <div class="class-subjects">
+        <span class="subj-tag tag-maths">Maths</span>
+        <span class="subj-tag tag-sci">Science</span>
+        <span class="subj-tag tag-soc">SST</span>
+        <span class="subj-tag tag-more">+3</span>
+      </div>
+      <svg class="class-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Class 8 -->
+    <a class="class-card" href="class_8th_page.html">
+      <div class="class-num">Class</div>
+      <div class="class-name">8th</div>
+      <div class="class-subjects">
+        <span class="subj-tag tag-maths">Maths</span>
+        <span class="subj-tag tag-sci">Science</span>
+        <span class="subj-tag tag-soc">SST</span>
+        <span class="subj-tag tag-more">+4</span>
+      </div>
+      <svg class="class-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Class 9 -->
+    <a class="class-card" href="class_9th_page.html">
+      <div class="class-num">Class</div>
+      <div class="class-name">9th</div>
+      <div class="class-subjects">
+        <span class="subj-tag tag-maths">Maths</span>
+        <span class="subj-tag tag-sci">Science</span>
+        <span class="subj-tag tag-soc">SST</span>
+        <span class="subj-tag tag-more">+3</span>
+      </div>
+      <svg class="class-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Class 10 – Board -->
+    <a class="class-card board" href="class_10th_page.html">
+      <div class="board-badge">BOARD EXAM</div>
+      <div class="class-num">Class</div>
+      <div class="class-name">10th</div>
+      <div class="class-subjects">
+        <span class="subj-tag tag-maths">Maths</span>
+        <span class="subj-tag tag-sci">Science</span>
+        <span class="subj-tag tag-soc">SST</span>
+        <span class="subj-tag tag-more">+3</span>
+      </div>
+      <svg class="class-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Class 11 – Board -->
+    <a class="class-card board" href="class_11th_page.html">
+      <div class="board-badge">BOARD EXAM</div>
+      <div class="class-num">Class</div>
+      <div class="class-name">11th</div>
+      <div class="class-subjects">
+        <span class="subj-tag tag-maths">Maths</span>
+        <span class="subj-tag tag-sci">Physics</span>
+        <span class="subj-tag tag-soc">Chem</span>
+        <span class="subj-tag tag-more">+5</span>
+      </div>
+      <svg class="class-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Class 12 – Board -->
+    <a class="class-card board" href="class_12th_page.html">
+      <div class="board-badge">BOARD EXAM</div>
+      <div class="class-num">Class</div>
+      <div class="class-name">12th</div>
+      <div class="class-subjects">
+        <span class="subj-tag tag-maths">Maths</span>
+        <span class="subj-tag tag-sci">Physics</span>
+        <span class="subj-tag tag-soc">Chem</span>
+        <span class="subj-tag tag-more">+6</span>
+      </div>
+      <svg class="class-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="why-section">
+  <h2 class="why-title">NCERTPadhlo <span>kyun choose karein?</span></h2>
+  <p class="why-sub">Lakhon students ka bharosa — yahan milta hai sab kuch, ek hi jagah, bilkul free.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon" style="background:#e8f5ee">📚</div>
+      <h3>Expert-Verified Solutions</h3>
+      <p>Har solution CBSE expert teachers ne step-by-step taiyaar kiya hai. Board exam ke liye perfect.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon" style="background:#eef4ff">📥</div>
+      <h3>Free PDF Download</h3>
+      <p>Sare chapters ke PDF free mein download karo. Offline bhi padho, koi charge nahi.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon" style="background:#fff3e0">🔄</div>
+      <h3>2026-27 Updated</h3>
+      <p>Latest CBSE syllabus ke hisaab se updated. Purana content nahi milega yahan.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon" style="background:#fce4ec">🌐</div>
+      <h3>Hindi & English Medium</h3>
+      <p>Dono medium mein solutions available hain. Aapki bhasha mein samjho.</p>
+    </div>
+  </div>
+</div>
+
+<!-- POPULAR SOLUTIONS -->
+<div class="sec-hd" style="margin-top:0">
+  <div>
+    <div class="sec-label">Popular Solutions ✦</div>
+    <div class="sec-subtitle" style="margin-top:3px">Sabse zyada search ki gayi solutions</div>
+  </div>
+</div>
+
+<div class="popular-section">
+  <div class="pop-grid">
+    <a class="pop-card" href="class10-maths-light.html">
+      <div class="pop-info">
+        <div class="pop-name">Class 10 Maths</div>
+        <div class="pop-meta">15 chapters · 600+ questions</div>
+      </div>
+      <svg class="pop-arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a class="pop-card" href="class_9th_page.html">
+      <div class="pop-info">
+        <div class="pop-name">Class 10 Science</div>
+        <div class="pop-meta">16 chapters · 700+ questions</div>
+      </div>
+      <svg class="pop-arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a class="pop-card" href="class_9th_page.html">
+      <div class="pop-info">
+        <div class="pop-name">Class 9 Maths</div>
+        <div class="pop-meta">15 chapters · 500+ questions</div>
+      </div>
+      <svg class="pop-arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a class="pop-card" href="class_12th_page.html">
+      <div class="pop-info">
+        <div class="pop-name">Class 12 Maths</div>
+        <div class="pop-meta">13 chapters · 800+ questions</div>
+      </div>
+      <svg class="pop-arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a class="pop-card" href="#">
+      <div class="pop-info">
+        <div class="pop-name">Class 12 Physics</div>
+        <div class="pop-meta">15 chapters · 600+ questions</div>
+      </div>
+      <svg class="pop-arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a class="pop-card" href="#">
+      <div class="pop-info">
+        <div class="pop-name">Class 11 Chemistry</div>
+        <div class="pop-meta">14 chapters · 550+ questions</div>
+      </div>
+      <svg class="pop-arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- SEO TEXT SECTION -->
+<div class="seo-section">
+  <h2 class="seo-title">NCERTPadhlo mein <span>Aapka Swagat Hai</span></h2>
+  <div class="seo-body">
+    <p><strong>NCERTPadhlo</strong> ek free online education platform hai jo Class 6 se lekar Class 12 tak ke sabhi CBSE students ke liye NCERT Solutions provide karta hai. Hamare platform pe aapko milenge step-by-step solutions, chapter-wise exercise answers, aur free PDF downloads — sab kuch bilkul free mein.</p>
+    <p>Hamare solutions CBSE-experienced teachers dwara prepare kiye gaye hain aur <strong>session 2026-27</strong> ke latest syllabus ke according updated hain. Chahe aap board exam ki taiyaari kar rahe hon ya regular studies ke liye help chahiye ho — NCERTPadhlo aapke liye best resource hai.</p>
+    <p>Hum <strong>Hindi Medium aur English Medium</strong> dono ke liye solutions provide karte hain. Maths, Science, Social Science, English, Hindi, Sanskrit — har subject ke detailed answers yahan available hain.</p>
+  </div>
+
+  <div class="seo-grid">
+    <div class="seo-topic">
+      <div class="seo-topic-title">📐 Class 10 Maths Solutions</div>
+      <div class="seo-topic-list">Real Numbers · Polynomials · Linear Equations · Quadratic Equations · Arithmetic Progressions · Triangles · Trigonometry · Circles · Statistics · Probability</div>
+    </div>
+    <div class="seo-topic">
+      <div class="seo-topic-title">🔬 Class 10 Science Solutions</div>
+      <div class="seo-topic-list">Chemical Reactions · Acids Bases Salts · Metals & Non-metals · Carbon Compounds · Life Processes · Control & Coordination · Heredity · Light · Electricity · Magnetic Effects</div>
+    </div>
+    <div class="seo-topic">
+      <div class="seo-topic-title">📊 Class 12 Maths Solutions</div>
+      <div class="seo-topic-list">Relations & Functions · Inverse Trigonometry · Matrices · Determinants · Continuity · Integrals · Differential Equations · Vectors · 3D Geometry · Linear Programming · Probability</div>
+    </div>
+    <div class="seo-topic">
+      <div class="seo-topic-title">⚗️ Class 12 Chemistry Solutions</div>
+      <div class="seo-topic-list">Solid State · Solutions · Electrochemistry · Chemical Kinetics · Surface Chemistry · p-Block Elements · Coordination Compounds · Polymers · Biomolecules</div>
+    </div>
+  </div>
+</div>
+
+<!-- KEYWORD CLOUD (SEO) -->
+<div class="keyword-section">
+  <div class="kw-label">Related Topics ✦</div>
+  <div class="kw-cloud">
+    <span class="kw-tag">NCERT Solutions Class 6</span>
+    <span class="kw-tag">NCERT Solutions Class 7</span>
+    <span class="kw-tag">NCERT Solutions Class 8</span>
+    <span class="kw-tag">NCERT Solutions Class 9</span>
+    <span class="kw-tag">NCERT Solutions Class 10</span>
+    <span class="kw-tag">NCERT Solutions Class 11</span>
+    <span class="kw-tag">NCERT Solutions Class 12</span>
+    <span class="kw-tag">Class 10 Maths Solutions</span>
+    <span class="kw-tag">Class 10 Science Solutions</span>
+    <span class="kw-tag">Class 12 Physics Solutions</span>
+    <span class="kw-tag">Class 12 Chemistry Solutions</span>
+    <span class="kw-tag">Class 12 Maths Solutions</span>
+    <span class="kw-tag">CBSE Solutions 2026-27</span>
+    <span class="kw-tag">Free NCERT PDF Download</span>
+    <span class="kw-tag">NCERT Solutions Hindi Medium</span>
+    <span class="kw-tag">Board Exam Solutions</span>
+    <span class="kw-tag">Chapter Wise NCERT</span>
+    <span class="kw-tag">Exercise Solutions CBSE</span>
+    <span class="kw-tag">Class 9 Maths Solutions</span>
+    <span class="kw-tag">Class 9 Science Solutions</span>
+    <span class="kw-tag">Class 11 Maths Solutions</span>
+    <span class="kw-tag">Class 11 Physics Solutions</span>
+    <span class="kw-tag">NCERT Exemplar Solutions</span>
+    <span class="kw-tag">CBSE Sample Papers</span>
+    <span class="kw-tag">NCERT Books PDF</span>
+    <span class="kw-tag">Class 8 Maths Solutions</span>
+    <span class="kw-tag">Class 8 Science Solutions</span>
+    <span class="kw-tag">Social Science NCERT Solutions</span>
+    <span class="kw-tag">English NCERT Solutions</span>
+    <span class="kw-tag">Hindi NCERT Solutions</span>
+    <span class="kw-tag">Sanskrit NCERT Solutions</span>
+    <span class="kw-tag">Ganita Prakash Solutions</span>
+    <span class="kw-tag">Ganita Manjari Solutions</span>
+    <span class="kw-tag">Class 6 Maths Ganita Prakash</span>
+    <span class="kw-tag">Free Study Material NCERT</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">NCERT Padhlo</div>
+      <div class="footer-desc">Free NCERT Solutions for Class 6 to 12. Updated for CBSE session 2026-27. Koi login nahi, koi paisa nahi.</div>
+    </div>
+    <div class="footer-links-col">
+      <h4>Classes</h4>
+      <a href="class_6th_page.html">Class 6</a>
+      <a href="class_7th_page.html">Class 7</a>
+      <a href="class_8th_page.html">Class 8</a>
+      <a href="class_9th_page.html">Class 9</a>
+      <a href="class_10th_page.html">Class 10</a>
+      <a href="class_11th_page.html">Class 11</a>
+      <a href="class_12th_page.html">Class 12</a>
+    </div>
+    <div class="footer-links-col">
+      <h4>Popular</h4>
+      <a href="class_10th_page.html">Class 10 Maths</a>
+      <a href="#">Class 10 Science</a>
+      <a href="class_12th_page.html">Class 12 Maths</a>
+      <a href="class_12th_page.html">Class 12 Physics</a>
+      <a href="class_9th_page.html">Class 9 Maths</a>
+    </div>
+    <div class="footer-links-col">
+      <h4>Info</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">✦ NCERTPadhlo · Free NCERT Solutions</div>
+    <div class="footer-copy">Free · No Ads · No Login</div>
+  </div>
+</div>
+
+<script>
+  // ── Mobile Menu ──
+  function openMenu() {
+    document.getElementById('mobileNav').classList.add('open');
+    document.getElementById('mobileOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.getElementById('mobileOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── Class / Subject / Chapter Data ──
+  const subjectData = {
+    // Classes 6-8
+    '6': {
+      'Maths': ['Knowing Our Numbers','Whole Numbers','Playing With Numbers','Basic Geometrical Ideas','Understanding Elementary Shapes','Integers','Fractions','Decimals','Data Handling','Mensuration','Algebra','Ratio and Proportion','Symmetry','Practical Geometry'],
+      'Science': ['Food: Where Does It Come From?','Components of Food','Fibre to Fabric','Sorting Materials Into Groups','Separation of Substances','Changes Around Us','Getting to Know Plants','Body Movements','The Living Organisms','Motion and Measurement','Light, Shadows and Reflections','Electricity and Circuits','Fun With Magnets','Water','Air Around Us'],
+      'Social Science': ['What, Where, How and When?','On The Trail of The Earliest People','From Gathering to Growing Food','In the Earliest Cities','What Books and Burials Tell Us','Kingdoms, Kings and an Early Republic','New Questions and Ideas','Ashoka, The Emperor Who Gave Up War','Vital Villages, Thriving Towns','Traders, Kings and Pilgrims','New Empires and Kingdoms','Buildings, Paintings and Books'],
+      'English': ['Who Did Patrick\'s Homework?','A House, A Home','The Kite','The Quarrel','A Different Kind of School','Who I Am','Fair Play','A Game of Chance','Desert Animals','The Banyan Tree'],
+      'Hindi': ['वह चिड़िया जो','बचपन','नादान दोस्त','चाँद से थोड़ी सी गप्पें','अक्ली बगिया','मधुर-मधुर मेरे दीपक जल'] 
+    },
+    '7': {
+      'Maths': ['Integers','Fractions and Decimals','Data Handling','Simple Equations','Lines and Angles','The Triangle and Its Properties','Congruence of Triangles','Comparing Quantities','Rational Numbers','Perimeter and Area','Algebraic Expressions','Exponents and Powers','Symmetry','Visualising Solid Shapes'],
+      'Science': ['Nutrition in Plants','Nutrition in Animals','Fibre to Fabric','Heat','Acids, Bases and Salts','Physical and Chemical Changes','Weather, Climate and Adaptations','Winds, Storms and Cyclones','Soil','Respiration in Organisms','Transportation in Animals and Plants','Reproduction in Plants','Motion and Time','Electric Current and Its Effects','Light','Water: A Precious Resource','Forests: Our Lifeline','Wastewater Story'],
+      'Social Science': ['Tracing Changes Through a Thousand Years','New Kings and Kingdoms','The Delhi Sultans','The Mughal Empire','Rulers and Buildings','Towns, Traders and Craftspersons','Tribes, Nomads and Settled Communities','Devotional Paths to the Divine','The Making of Regional Cultures','Eighteenth-Century Political Formations'],
+      'English': ['Three Questions','The Gift of the Magi','Gopal and the Hilsa Fish','The Ashes That Made Trees Bloom','Quality','Expert Detectives','The Invention of Vita-Wonk','Fire: Friend and Foe','A Bicycle in Good Repair','The Story of Cricket'],
+      'Hindi': ['हम पंछी उन्मुक्त गगन के','दादी माँ','हिमालय की बेटियां','कठपुतली','मीठाईवाला','रक्त और हमारा शरीर']
+    },
+    '8': {
+      'Maths': ['Rational Numbers','Linear Equations in One Variable','Understanding Quadrilaterals','Practical Geometry','Data Handling','Squares and Square Roots','Cubes and Cube Roots','Comparing Quantities','Algebraic Expressions and Identities','Visualising Solid Shapes','Mensuration','Exponents and Powers','Direct and Inverse Proportions','Factorisation','Introduction to Graphs','Playing with Numbers'],
+      'Science': ['Crop Production and Management','Microorganisms: Friend and Foe','Synthetic Fibres and Plastics','Materials: Metals and Non-Metals','Coal and Petroleum','Combustion and Flame','Conservation of Plants and Animals','Cell - Structure and Functions','Reproduction in Animals','Reaching the Age of Adolescence','Force and Pressure','Friction','Sound','Chemical Effects of Electric Current','Some Natural Phenomena','Light','Stars and the Solar System','Pollution of Air and Water'],
+      'Social Science': ['How, When and Where','From Trade to Territory','Ruling the Countryside','Tribals, Dikus and the Vision of a Golden Age','When People Rebel','Colonialism and the City','Weavers, Iron Smelters and Factory Owners','Civilising the Native','Women, Caste and Reform','The Changing World of Visual Arts','The Making of the National Movement','India After Independence'],
+      'English': ['The Best Christmas Present in the World','The Tsunami','Glimpses of the Past','Bepin Choudhury\'s Lapse of Memory','The Summit Within','This is Jody\'s Fawn','A Visit to Cambridge','A Short Monsoon Diary','The Great Stone Face'],
+      'Hindi': ['रहिम की दोहे','भगवान के डाकिए','यह सब से कठिन समय नहीं','कबीर की साखियाँ','कामचोर','बड़े भाई साहब']
+    },
+    // Classes 9-10
+    '9': {
+      'Maths': ['Number Systems','Polynomials','Coordinate Geometry','Linear Equations in Two Variables','Introduction to Euclid\'s Geometry','Lines and Angles','Triangles','Quadrilaterals','Areas of Parallelograms and Triangles','Circles','Constructions','Heron\'s Formula','Surface Areas and Volumes','Statistics','Probability'],
+      'Science': ['Matter in Our Surroundings','Is Matter Around Us Pure','Atoms and Molecules','Structure of the Atom','The Fundamental Unit of Life','Tissues','Diversity in Living Organisms','Motion','Force and Laws of Motion','Gravitation','Work and Energy','Sound','Why Do We Fall Ill?','Natural Resources','Improvement in Food Resources'],
+      'Social Science': ['The French Revolution','Socialism in Europe and the Russian Revolution','Nazism and the Rise of Hitler','Forest Society and Colonialism','Pastoralists in the Modern World','India – Size and Location','Physical Features of India','Drainage','Climate','Natural Vegetation and Wildlife','Population','The Story of Village Palampur','People as Resource','Poverty as a Challenge','Food Security in India'],
+      'English': ['The Fun They Had','The Sound of Music','The Little Girl','A Truly Beautiful Mind','The Snake and the Mirror','My Childhood','Packing','Reach for the Top','The Bond of Love','Kathmandu','If I Were You'],
+      'Hindi': ['दो बैलों की कथा','ल्हासा की ओर','उपभोक्तावाद की संस्कृति','साँवले सपनों की याद','नाना साहब की पुत्री देवी मैना','प्रेमचंद के फटे जूते']
+    },
+    '10': {
+      'Maths': ['Real Numbers','Polynomials','Pair of Linear Equations in Two Variables','Quadratic Equations','Arithmetic Progressions','Triangles','Coordinate Geometry','Introduction to Trigonometry','Some Applications of Trigonometry','Circles','Areas Related to Circles','Constructions','Surface Areas and Volumes','Statistics','Probability'],
+      'Science': ['Chemical Reactions and Equations','Acids, Bases and Salts','Metals and Non-metals','Carbon and Its Compounds','Periodic Classification of Elements','Life Processes','Control and Coordination','How Do Organisms Reproduce?','Heredity and Evolution','Light – Reflection and Refraction','The Human Eye and the Colourful World','Electricity','Magnetic Effects of Electric Current','Sources of Energy','Our Environment','Management of Natural Resources'],
+      'Social Science': ['The Rise of Nationalism in Europe','The Nationalist Movement in Indo-China','Nationalism in India','The Making of a Global World','The Age of Industrialisation','Work, Life and Leisure','Print Culture and the Modern World','Novels, Society and History','Resources and Development','Forest and Wildlife Resources','Water Resources','Agriculture','Minerals and Energy Resources','Manufacturing Industries','Lifelines of National Economy','Democracy and Diversity','Gender, Religion and Caste','The Challenges of Democracy'],
+      'English': ['A Letter to God','Nelson Mandela: Long Walk to Freedom','Two Stories About Flying','From the Diary of Anne Frank','The Hundred Dresses','Glimpses of India','Mijbil the Otter','Madam Rides the Bus','The Sermon at Benares','The Proposal'],
+      'Hindi': ['साखी','पद','दोहे','मनुष्यता','पर्वत प्रदेश में पावस','तопी शुक्ला']
+    },
+    // Classes 11-12
+    '11': {
+      'Physics': ['Physical World','Units and Measurements','Motion in a Straight Line','Motion in a Plane','Laws of Motion','Work, Energy and Power','System of Particles and Rotational Motion','Gravitation','Mechanical Properties of Solids','Mechanical Properties of Fluids','Thermal Properties of Matter','Thermodynamics','Kinetic Theory','Oscillations','Waves'],
+      'Chemistry': ['Some Basic Concepts of Chemistry','Structure of Atom','Classification of Elements and Periodicity','Chemical Bonding and Molecular Structure','States of Matter','Thermodynamics','Equilibrium','Redox Reactions','Hydrogen','The s-Block Elements','The p-Block Elements','Organic Chemistry - Some Basic Principles','Hydrocarbons','Environmental Chemistry'],
+      'Maths': ['Sets','Relations and Functions','Trigonometric Functions','Complex Numbers and Quadratic Equations','Linear Inequalities','Permutations and Combinations','Binomial Theorem','Sequences and Series','Straight Lines','Conic Sections','Introduction to Three Dimensional Geometry','Limits and Derivatives','Mathematical Reasoning','Statistics','Probability'],
+      'Biology': ['The Living World','Biological Classification','Plant Kingdom','Animal Kingdom','Morphology of Flowering Plants','Anatomy of Flowering Plants','Structural Organisation in Animals','Cell: The Unit of Life','Biomolecules','Cell Cycle and Cell Division','Transport in Plants','Mineral Nutrition','Photosynthesis in Higher Plants','Respiration in Plants','Plant Growth and Development'],
+      'English': ['The Portrait of a Lady','We\'re Not Afraid to Die...','Discovering Tut: the Saga Continues','Landscape of the Soul','The Ailing Planet: the Green Movement\'s Role','The Browning Version','The Adventure','Silk Road','Father to Son']
+    },
+    '12': {
+      'Physics': ['Electric Charges and Fields','Electrostatic Potential and Capacitance','Current Electricity','Moving Charges and Magnetism','Magnetism and Matter','Electromagnetic Induction','Alternating Current','Electromagnetic Waves','Ray Optics and Optical Instruments','Wave Optics','Dual Nature of Radiation and Matter','Atoms','Nuclei','Semiconductor Electronics','Communication Systems'],
+      'Chemistry': ['The Solid State','Solutions','Electrochemistry','Chemical Kinetics','Surface Chemistry','General Principles and Processes of Isolation of Elements','The p-Block Elements','The d-and f-Block Elements','Coordination Compounds','Haloalkanes and Haloarenes','Alcohols, Phenols and Ethers','Aldehydes, Ketones and Carboxylic Acids','Amines','Biomolecules','Polymers','Chemistry in Everyday Life'],
+      'Maths': ['Relations and Functions','Inverse Trigonometric Functions','Matrices','Determinants','Continuity and Differentiability','Application of Derivatives','Integrals','Application of Integrals','Differential Equations','Vector Algebra','Three Dimensional Geometry','Linear Programming','Probability'],
+      'Biology': ['Reproduction in Organisms','Sexual Reproduction in Flowering Plants','Human Reproduction','Reproductive Health','Principles of Inheritance and Variation','Molecular Basis of Inheritance','Evolution','Human Health and Disease','Strategies for Enhancement in Food Production','Microbes in Human Welfare','Biotechnology: Principles and Processes','Biotechnology and its Applications','Organisms and Populations','Ecosystem','Biodiversity and Conservation','Environmental Issues'],
+      'English': ['The Last Lesson','Lost Spring','Deep Water','The Rattrap','Indigo','Poets and Pancakes','The Interview','Going Places']
+    }
+  };
+
+  const classPages = {
+    '6': 'class_6th_page.html',
+    '7': 'class_7th_page.html',
+    '8': 'class_8th_page.html',
+    '9': 'class_9th_page.html',
+    '10': 'class_10th_page.html',
+    '11': 'class_11th_page.html',
+    '12': 'class_12th_page.html'
+  };
+
+  function onClassChange() {
+    const cls = document.getElementById('selectClass').value;
+    const subjSel = document.getElementById('selectSubject');
+    const chapSel = document.getElementById('selectChapter');
+    const goBtn = document.getElementById('goBtn');
+
+    // Reset subject & chapter
+    subjSel.innerHTML = '<option value="" disabled selected>Select Subject</option>';
+    chapSel.innerHTML = '<option value="" disabled selected>Select Chapter</option>';
+    chapSel.disabled = true;
+    goBtn.disabled = true;
+
+    if (cls && subjectData[cls]) {
+      const subjects = Object.keys(subjectData[cls]);
+      subjects.forEach(sub => {
+        const opt = document.createElement('option');
+        opt.value = sub;
+        opt.textContent = sub;
+        subjSel.appendChild(opt);
+      });
+      subjSel.disabled = false;
+    } else {
+      subjSel.disabled = true;
+    }
+  }
+
+  function onSubjectChange() {
+    const cls = document.getElementById('selectClass').value;
+    const subj = document.getElementById('selectSubject').value;
+    const chapSel = document.getElementById('selectChapter');
+    const goBtn = document.getElementById('goBtn');
+
+    // Reset chapter
+    chapSel.innerHTML = '<option value="" disabled selected>Select Chapter</option>';
+    goBtn.disabled = true;
+
+    if (cls && subj && subjectData[cls] && subjectData[cls][subj]) {
+      const chapters = subjectData[cls][subj];
+      chapters.forEach((chap, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx + 1;
+        opt.textContent = 'Ch ' + (idx + 1) + ' — ' + chap;
+        chapSel.appendChild(opt);
+      });
+      chapSel.disabled = false;
+    } else {
+      chapSel.disabled = true;
+    }
+  }
+
+  // Enable Go button when chapter is selected
+  document.getElementById('selectChapter').addEventListener('change', function() {
+    const val = this.value;
+    document.getElementById('goBtn').disabled = !val;
+  });
+
+  function goToSolution() {
+    const cls = document.getElementById('selectClass').value;
+    const subj = document.getElementById('selectSubject').value;
+    const chap = document.getElementById('selectChapter').value;
+
+    if (cls && subj && chap) {
+      // Navigate to the class page (individual chapter pages can be added later)
+      const page = classPages[cls] || '#';
+      window.location.href = page;
+    }
+  }
+</script>
+
+</body>
+</html>

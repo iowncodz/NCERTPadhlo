@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution Viewer – NCERT Padhlo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Poppins:wght@400;500;600;800&family=Fuzzy+Bubbles:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  :root{
+    --bg:#f5f4f0;--bg2:#fff;--bg3:#faf9ff;
+    --border:#e2e0da;--border-h:#b8b0e8;
+    --text:#3f3e3e;--muted:#4d4d4d;--dim:#4b4b4b;
+    --accent:#0673F6;--accent-light:#eeedfe;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;min-height:100vh;padding-bottom:4rem}
+
+  /* NAV */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;border-bottom:.5px solid var(--border);background:var(--bg2);position:sticky;top:0;z-index:100}
+  .logo{display:flex;align-items:center;gap:9px;font-family:'Fuzzy Bubbles',cursive;font-weight:700;font-size:15px;color:#1a1a1a;text-decoration:none}
+  .back-btn{display:flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;color:var(--dim);text-decoration:none;padding:5px 10px;border:.5px solid var(--border);border-radius:6px;background:var(--bg);transition:border-color .15s,background .15s}
+  .back-btn:hover{border-color:var(--border-h);background:var(--bg3)}
+
+  /* HEADER */
+  .viewer-header{padding:1.8rem 1.25rem 1.4rem;border-bottom:.5px solid var(--border);background:var(--bg2)}
+  .breadcrumb{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+  .breadcrumb span{color:var(--accent)}
+  .viewer-title{font-size:clamp(20px,5vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.2;font-family:'Poppins',sans-serif}
+  .viewer-title span{color:var(--accent)}
+  .viewer-meta{display:flex;gap:1rem;margin-top:.7rem;flex-wrap:wrap}
+  .meta-pill{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);background:var(--bg);border:.5px solid var(--border);padding:3px 9px;border-radius:4px}
+
+  /* STICKY JUMP BAR */
+  .jump-bar{padding:.7rem 1.25rem;background:var(--bg2);border-bottom:.5px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;position:sticky;top:53px;z-index:90}
+  .jump-tabs{display:flex;gap:7px;min-width:max-content}
+  .jump-tab{font-family:'Space Mono',monospace;font-size:11px;padding:5px 13px;border:.5px solid var(--border);border-radius:20px;cursor:pointer;background:var(--bg);color:var(--dim);transition:all .2s;white-space:nowrap;user-select:none;text-decoration:none}
+  .jump-tab:hover{border-color:var(--border-h);background:var(--bg3)}
+  .jump-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  /* QUESTIONS AREA - vertical scroll */
+  .questions-area{padding:1.2rem 1.25rem;background:var(--bg);display:flex;flex-direction:column;gap:1.2rem}
+
+  /* Single question card */
+  .q-card{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;overflow:hidden;max-width:800px;width:100%;margin:0 auto;scroll-margin-top:110px}
+  .q-card-top{padding:.8rem 1.1rem;border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+  .q-card-label{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--accent)}
+  .zoom-btn{display:flex;align-items:center;gap:5px;background:var(--accent-light);border:.5px solid #c4bff5;border-radius:5px;padding:3px 9px;font-size:11px;font-weight:700;color:var(--accent);font-family:'Syne',sans-serif;cursor:pointer;text-decoration:none;transition:background .15s}
+  .zoom-btn:hover{background:#dddafc}
+
+  /* image wrapper */
+  .img-wrapper{position:relative;background:#f0eff0;min-height:200px;display:flex;align-items:center;justify-content:center}
+  .sol-img{width:100%;height:auto;display:block;cursor:zoom-in}
+  .sol-img.loading{opacity:0;transition:opacity .3s}
+  .sol-img.loaded{opacity:1}
+
+  /* skeleton shimmer */
+  .img-skeleton{position:absolute;inset:0;background:linear-gradient(90deg,#eee 25%,#f5f5f5 50%,#eee 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
+  @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+  /* error state */
+  .img-error{display:none;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:2.5rem;text-align:center}
+  .img-error.show{display:flex}
+  .img-error-icon{font-size:1.8rem}
+  .img-error-title{font-size:13px;font-weight:700;color:var(--text)}
+  .img-error-sub{font-size:11px;color:var(--dim)}
+
+  /* LIGHTBOX */
+  .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:999;align-items:center;justify-content:center;padding:1rem}
+  .lightbox.show{display:flex}
+  .lightbox img{max-width:100%;max-height:92vh;border-radius:8px;object-fit:contain}
+  .lb-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;background:rgba(255,255,255,.15);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:background .15s}
+  .lb-close:hover{background:rgba(255,255,255,.28)}
+
+  .footer{margin-top:2rem;padding:1.5rem 1.25rem 0;border-top:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;background:var(--bg2)}
+  .footer-txt{font-family:'Space Mono',monospace;font-size:11px;color:var(--dim)}
+
+  @media(max-width:480px){
+    .viewer-header,.questions-area,.jump-bar,.footer{padding-left:1rem;padding-right:1rem}
+    .q-card{scroll-margin-top:115px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="class_9th_page.html">
+    <img src="logo.jpg" style="height:32px;width:auto;border-radius:4px;" alt="NCERTPadhlo">
+    NCERT Padhlo
+  </a>
+  <a class="back-btn" href="class_9th_page.html">
+    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
+
+<div class="viewer-header">
+  <div class="breadcrumb">Class 9 · Maths · <span id="breadExName">—</span></div>
+  <div class="viewer-title" id="viewerTitle">Loading...</div>
+  <div class="viewer-meta">
+    <div class="meta-pill" id="metaChapter">—</div>
+    <div class="meta-pill" id="metaQCount">—</div>
+  </div>
+</div>
+
+<!-- Sticky jump bar -->
+<div class="jump-bar">
+  <div class="jump-tabs" id="jumpTabs"></div>
+</div>
+
+<!-- All questions vertical -->
+<div class="questions-area" id="questionsArea"></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lbImg" src="" alt="Solution zoomed">
+</div>
+
+<div class="footer">
+  <div class="footer-txt">✦ Class 9 NCERT Maths Solutions</div>
+  <div class="footer-txt">Free · No Ads</div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const chNum  = params.get('ch')  || '01';
+const exNum  = params.get('ex')  || '1';
+const totalQ = parseInt(params.get('q')) || 4;
+const chName = params.get('name') || 'Chapter';
+const exName = `Exercise ${parseInt(chNum)}.${exNum}`;
+
+// Page info
+document.title = `${exName} Solutions – NCERT Padhlo`;
+document.getElementById('breadExName').textContent = exName;
+document.getElementById('viewerTitle').innerHTML = `<span>${exName}</span> — Solutions`;
+document.getElementById('metaChapter').textContent = `Ch ${chNum} · ${decodeURIComponent(chName)}`;
+document.getElementById('metaQCount').textContent = `${totalQ} question${totalQ!==1?'s':''}`;
+
+// Image path — Cloudinary
+const CLOUD = 'droxgwf2p';
+const CFOLDER = 'ncertsolutions';
+const CLASS_NUM = params.get('class') || '9';
+const SUBJECT   = params.get('subject') || 'maths';
+function imgPath(q){
+  const chN  = parseInt(chNum);
+  const name = `ch${chNum}-ex${chN}.${exNum}-q${q}`;
+  return `https://res.cloudinary.com/${CLOUD}/image/upload/q_auto,f_auto/${CFOLDER}/class${CLASS_NUM}/${SUBJECT}/${name}`;
+}
+
+// Build all question cards + jump tabs
+const area = document.getElementById('questionsArea');
+const tabs = document.getElementById('jumpTabs');
+
+for(let i=1; i<=totalQ; i++){
+  // Jump tab
+  const tab = document.createElement('a');
+  tab.className = 'jump-tab' + (i===1?' active':'');
+  tab.textContent = `Q ${i}`;
+  tab.href = `#q${i}`;
+  tab.id = `tab${i}`;
+  tab.onclick = e => { e.preventDefault(); document.getElementById(`q${i}`).scrollIntoView({behavior:'smooth'}); };
+  tabs.appendChild(tab);
+
+  // Question card
+  const card = document.createElement('div');
+  card.className = 'q-card';
+  card.id = `q${i}`;
+  card.innerHTML = `
+    <div class="q-card-top">
+      <div class="q-card-label">Question ${i}</div>
+      <span class="zoom-btn" onclick="openLightbox('${imgPath(i)}')">
+        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        Zoom
+      </span>
+    </div>
+    <div class="img-wrapper" id="wrap${i}">
+      <div class="img-skeleton" id="skel${i}"></div>
+      <img class="sol-img loading" id="img${i}" src="" alt="Q${i} solution" onclick="openLightbox('${imgPath(i)}')">
+      <div class="img-error" id="err${i}">
+        <div class="img-error-icon">🖼️</div>
+        <div class="img-error-title">Coming soon</div>
+        <div class="img-error-sub">Solution jald upload hogi</div>
+      </div>
+    </div>`;
+  area.appendChild(card);
+
+  // Load image
+  const tmp = new Image();
+  tmp.onload = (idx => ()=>{
+    document.getElementById(`img${idx}`).src = imgPath(idx);
+    document.getElementById(`img${idx}`).classList.replace('loading','loaded');
+    document.getElementById(`skel${idx}`).style.display='none';
+  })(i);
+  tmp.onerror = (idx => ()=>{
+    document.getElementById(`skel${idx}`).style.display='none';
+    document.getElementById(`img${idx}`).style.display='none';
+    document.getElementById(`err${idx}`).classList.add('show');
+  })(i);
+  tmp.src = imgPath(i);
+}
+
+// Active tab on scroll
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const n = e.target.id.replace('q','');
+      document.querySelectorAll('.jump-tab').forEach(t=>t.classList.remove('active'));
+      const activeTab = document.getElementById(`tab${n}`);
+      if(activeTab){
+        activeTab.classList.add('active');
+        activeTab.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+      }
+    }
+  });
+},{threshold:0.4});
+
+for(let i=1;i<=totalQ;i++){
+  const el = document.getElementById(`q${i}`);
+  if(el) observer.observe(el);
+}
+
+// Lightbox
+function openLightbox(src){
+  if(!src) return;
+  document.getElementById('lbImg').src = src;
+  document.getElementById('lightbox').classList.add('show');
+}
+function closeLightbox(){ document.getElementById('lightbox').classList.remove('show'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
+</script>
+</body>
+</html>
