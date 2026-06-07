@@ -180,6 +180,9 @@
   .footer-links-col a:hover{color:var(--accent)}
   .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-top:1rem;border-top:.5px solid var(--border)}
   .footer-copy{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim)}
+  .copyright-telegram{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .telegram-link{color:var(--accent);text-decoration:none;font-weight:600;font-family:'Syne',sans-serif;transition:opacity .2s}
+  .telegram-link:hover{opacity:.7;text-decoration:underline}
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -596,7 +599,7 @@
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- FOOTER with COPYRIGHT & TELEGRAM ID -->
 <div class="footer">
   <div class="footer-top">
     <div>
@@ -629,7 +632,10 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">✦ NCERTPadhlo · Free NCERT Solutions</div>
+    <div class="copyright-telegram">
+      <div class="footer-copy">© 2025 NCERTPadhlo — All Rights Reserved</div>
+      <div class="footer-copy">📡 Join us on Telegram: <a href="https://t.me/ncertpadhlo" target="_blank" class="telegram-link">@ncertpadhlo</a></div>
+    </div>
     <div class="footer-copy">Free · No Ads · No Login</div>
   </div>
 </div>
@@ -684,7 +690,7 @@
       'Science': ['Chemical Reactions and Equations','Acids, Bases and Salts','Metals and Non-metals','Carbon and Its Compounds','Periodic Classification of Elements','Life Processes','Control and Coordination','How Do Organisms Reproduce?','Heredity and Evolution','Light – Reflection and Refraction','The Human Eye and the Colourful World','Electricity','Magnetic Effects of Electric Current','Sources of Energy','Our Environment','Management of Natural Resources'],
       'Social Science': ['The Rise of Nationalism in Europe','The Nationalist Movement in Indo-China','Nationalism in India','The Making of a Global World','The Age of Industrialisation','Work, Life and Leisure','Print Culture and the Modern World','Novels, Society and History','Resources and Development','Forest and Wildlife Resources','Water Resources','Agriculture','Minerals and Energy Resources','Manufacturing Industries','Lifelines of National Economy','Democracy and Diversity','Gender, Religion and Caste','The Challenges of Democracy'],
       'English': ['A Letter to God','Nelson Mandela: Long Walk to Freedom','Two Stories About Flying','From the Diary of Anne Frank','The Hundred Dresses','Glimpses of India','Mijbil the Otter','Madam Rides the Bus','The Sermon at Benares','The Proposal'],
-      'Hindi': ['साखी','पद','दोहे','मनुष्यता','पर्वत प्रदेश में पावस','तопी शुक्ला']
+      'Hindi': ['साखी','पद','दोहे','मनुष्यता','पर्वत प्रदेश में पावस','तोपी शुक्ला']
     },
     // Classes 11-12
     '11': {
@@ -719,7 +725,6 @@
     const chapSel = document.getElementById('selectChapter');
     const goBtn = document.getElementById('goBtn');
 
-    // Reset subject & chapter
     subjSel.innerHTML = '<option value="" disabled selected>Select Subject</option>';
     chapSel.innerHTML = '<option value="" disabled selected>Select Chapter</option>';
     chapSel.disabled = true;
@@ -745,7 +750,6 @@
     const chapSel = document.getElementById('selectChapter');
     const goBtn = document.getElementById('goBtn');
 
-    // Reset chapter
     chapSel.innerHTML = '<option value="" disabled selected>Select Chapter</option>';
     goBtn.disabled = true;
 
@@ -763,7 +767,6 @@
     }
   }
 
-  // Enable Go button when chapter is selected
   document.getElementById('selectChapter').addEventListener('change', function() {
     const val = this.value;
     document.getElementById('goBtn').disabled = !val;
@@ -775,7 +778,6 @@
     const chap = document.getElementById('selectChapter').value;
 
     if (cls && subj && chap) {
-      // Navigate to the class page (individual chapter pages can be added later)
       const page = classPages[cls] || '#';
       window.location.href = page;
     }
